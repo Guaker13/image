@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@codexteam/ajax": "^4.2.0",
+    "cropperjs": "^1.6.1",
     "eslint": "^6.8.0",
     "eslint-config-codex": "^1.3.3",
     "eslint-loader": "^4.0.0",

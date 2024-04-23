@@ -1,3 +1,5 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.11/cropper.css";
+
 .image-tool {
   --bg-color: #cdd1e0;
   --front-color: #388ae5;
@@ -43,6 +45,36 @@
     }
   }
 
+  &__cropper-container {
+    height: 300px;
+    overflow: scroll;
+   }
+
+  &__cropper-canvas-btn {
+    margin-top: 12px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px;
+    border-radius: 3px;
+    border: 1px solid rgba(201, 201, 204, .48);
+    font-size: 14.9px;
+    background: #fff;
+    box-shadow: 0 2px 2px #121e390a;
+    color: #707684;
+    text-align: center;
+    cursor: pointer;
+
+    svg {
+      height: auto;
+      margin: 0 6px 0 0;
+      max-height: none;
+    }
+  }
+
   &__caption {
     &[contentEditable="true"][data-placeholder]::before {
       position: absolute !important;
@@ -74,6 +106,9 @@
     ^&__caption {
       display: none;
     }
+    ^&__cropper {
+      display: none;
+    }
   }
 
   .cdx-button {
@@ -86,7 +121,7 @@
       margin: 0 6px 0 0;
     }
   }
-  
+
   &--filled {
     .cdx-button {
       display: none;
@@ -96,6 +131,24 @@
       &-preloader {
         display: none;
       }
+    }
+
+    ^&__cropper {
+      display: none;
+    }
+  }
+
+  &--cropping {
+    ^&__caption {
+      display: none
+    }
+
+    ^&__image-preloader {
+      display: none
+    }
+
+    .cdx-button {
+      display: none;
     }
   }
 
@@ -114,6 +167,10 @@
     .cdx-button {
       display: none;
     }
+
+    ^&__cropper {
+      display: none;
+    }
   }
 
   /**
@@ -123,7 +180,7 @@
 
   &--withBorder {
     ^&__image {
-      border: 1px solid var(--border-color);
+      border: 2px solid rgb(83, 186, 172);
     }
   }
 
